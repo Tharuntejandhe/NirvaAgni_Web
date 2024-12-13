@@ -1,0 +1,218 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7fc;
+}
+
+/* Title Section */
+.title-section {
+    background: linear-gradient(to right, #141e30, #243b55);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    border-bottom: 2px solid #243b55;
+}
+
+.title-section h1 {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+/* Team Photo Section */
+.team-photo {
+    text-align: center;
+    padding: 20px;
+    animation: fadeIn 1s ease-out;
+}
+
+.team-photo img {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 10px;
+}
+
+.team-photo p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* Team Details Section */
+.team-section {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: slideIn 1s ease-out;
+}
+
+/* Section Titles */
+.team-section h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+/* General Card Container */
+.team-cards {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+/* Card Styles */
+.team-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    width: 320px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(50px);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Hover Effect for Cards */
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Images */
+.team-card img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.team-card img:hover {
+    transform: scale(1.1);
+}
+
+.team-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.team-card p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.team-card a {
+    margin: 0 5px;
+    color: #243b55;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.team-card a:hover {
+    color: #00d9a5;
+    transform: scale(1.2);
+}
+
+/* Animation for sections */
+@keyframes slideInLeft {
+    0% { transform: translateX(-50px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInDown {
+    0% { 
+        transform: translateY(-50px); 
+        opacity: 0;
+    }
+    100% { 
+        transform: translateY(0); 
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    0% { transform: translateX(50px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInUp {
+    0% { transform: translateY(50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .team-cards {
+        justify-content: center;
+    }
+
+    .team-card {
+        width: 80%;
+    }
+}
+
+/* Triggering the animations */
+.team-leads .team-card {
+    animation: slideInLeft 2.3s forwards;
+}
+
+.team-grid .team-card {
+    animation: slideInRight 1.5s forwards;
+}
+
+.team-software .team-card {
+    animation: slideInDown 1.5s forwards;
+}
+
+.team-photo img {
+    animation: slideInDown 1.5s forwards;
+}
+
+.team-photo p {
+    animation: fadeIn 1.5s ease-out;
+}
+
+/* Adding some edge enhancements */
+.team-card {
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+.team-card:hover {
+    transform: translateY(-100px); /* Moves the card up when hovered */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Card Images - Increased Size */
+.team-card img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effect for Image */
+.team-card img:hover {
+    transform: scale(1.1); /* Slightly enlarges the image when hovered */
+}
+
+@media (max-width: 768px) {
+    .team-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-card {
+        width: 80%;
+    }
+}

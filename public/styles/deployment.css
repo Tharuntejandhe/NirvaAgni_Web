@@ -1,0 +1,171 @@
+/* Base Styles */
+main {
+    min-height: 100vh;
+    background: linear-gradient(to right, #141e30, #243b55);
+    color: white;
+    padding: 2rem 1rem 5vh;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Title Section */
+.title-section {
+    /* padding: 2rem 1rem; */
+    animation: fadeIn 1.5s ease-in-out;
+    margin-bottom: 2rem;
+}
+
+.title-section h1 {
+    font-size: 4rem;
+    text-align: center;
+    font-weight: 500;
+    padding-top: 1rem;
+}
+
+.title-section p {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: lighter;
+}
+
+/* Features List */
+.features-list {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* Feature Items */
+.feature-item {
+    padding-top: 10vh;
+    display: flex;
+    flex-direction: row;
+    animation: slideUp 1.5s ease-out;
+}
+
+.feature-img {
+    float: left;
+}
+
+img {
+    height: 60vh;
+    width: auto;
+}
+
+.feature-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.feature-info h2 {
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+.feature-info p {
+    padding-top: 3vh;
+    font-size: 2rem;
+    font-weight: lighter;
+}
+
+.deployment-item, .deployment-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10vh;
+}
+
+.deployment-info {
+    margin-top: 5vh;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes slideUp {
+    0% { transform: translateY(50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Navigation */
+    .navbar-menu {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Title Section */
+    .title-section h1 {
+        font-size: 3rem;
+    }
+
+    .title-section p {
+        font-size: 1.5rem;
+    }
+
+    /* Feature Items */
+    .feature-item {
+        flex-direction: column;
+        padding-top: 3vh;
+    }
+
+    .feature-img {
+        float: none;
+        margin: 0 auto;
+    }
+
+    img {
+        height: 35vh;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .feature-info {
+        margin: 2vh auto;
+        text-align: center;
+        margin-left: 2vw;
+        margin-right: 2vw;
+    }
+
+    .feature-info h2 {
+        font-size: 2rem;
+    }
+
+    .feature-info p {
+        font-size: 1.2rem;
+        padding-top: 1.5vh;
+    }
+
+    main {
+        padding: 1rem 0.5rem 3vh;
+    }
+}
+
+/* Animation */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.animate-on-scroll.show {
+    opacity: 1;
+    transform: translateY(0);
+}

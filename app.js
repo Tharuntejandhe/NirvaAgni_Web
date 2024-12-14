@@ -14,6 +14,10 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
+app.get('/index', (req, res) => {
+    res.render('index');
+});
+
 app.get('/about', (req, res) => {
     res.render('about');
 });
@@ -28,6 +32,14 @@ app.get('/features', (req, res) => {
 
 app.get('/team', (req, res) => {
     res.render('team');
+});
+
+app.get('/technology', (req, res) => {
+    res.render('technology');
+});
+
+app.get('/deployment', (req, res) => {
+    res.render('deployment');
 });
 
 // Start the server

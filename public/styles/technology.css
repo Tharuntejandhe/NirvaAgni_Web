@@ -1,0 +1,124 @@
+/* Main Technology Page Styles */
+.tech-main {
+  min-height: 100vh;
+  background: linear-gradient(to right, #141e30, #243b55);
+  color: white;
+  padding: 2rem 1rem;
+}
+
+/* Title Section */
+.title-section {
+  text-align: center;
+  margin-bottom: 4rem;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.title-section h1 {
+  font-size: 4rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.title-section p {
+  font-size: 1.5rem;
+  font-weight: lighter;
+}
+
+/* Technology Grid */
+.tech-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+/* Technology Cards */
+.tech-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
+  animation: slideUp 1.5s ease-out;
+}
+
+.tech-card:hover {
+  transform: translateY(-10px);
+}
+
+.tech-icon {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.tech-icon img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.tech-content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  text-align: center;
+}
+
+.tech-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+}
+
+img {
+  height: 60vh;
+  width: auto;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideUp {
+  0% { transform: translateY(50px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .title-section h1 {
+      font-size: 2.5rem;
+  }
+
+  .title-section p {
+      font-size: 1.2rem;
+  }
+
+  .tech-grid {
+      grid-template-columns: 1fr;
+  }
+
+  .tech-card {
+      padding: 1.5rem;
+  }
+
+  .tech-content h2 {
+      font-size: 1.5rem;
+      text-align: center;
+  }
+
+  .tech-content p {
+      font-size: 1rem;
+      text-align: center;
+  }
+
+  .tech-icon img {
+      max-width: 150px;
+  }
+}

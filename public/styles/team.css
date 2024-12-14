@@ -12,11 +12,13 @@ body {
     text-align: center;
     padding: 50px 20px;
     border-bottom: 2px solid #243b55;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 .title-section h1 {
-    font-size: 3rem;
-    font-weight: 600;
+    font-size: 5rem;
+    font-weight: 500;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 /* Team Photo Section */
@@ -215,4 +217,9 @@ body {
     .team-card {
         width: 80%;
     }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }

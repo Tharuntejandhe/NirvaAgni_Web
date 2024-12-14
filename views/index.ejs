@@ -12,39 +12,18 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar">
-        <a class="navbar-brand" href="#">Nirva-Agni</a>
-        <div class="navbar-menu">
-            <a href="/about" style="--i: 0;">About</a>
-            <a href="/features" style="--i: 1;">Features</a>
-            <a href="/technology" style="--i: 2;">Technology</a>
-            <a href="/applications" style="--i: 3;">Applications</a>
-            <a href="/deployment" style="--i: 4;">Deployment</a>
-            <a href="/team" style="--i: 5;">Team</a>
-            <a href="/contact" style="--i: 6;">Contact</a>
-        </div>
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-        <div class="mobile-nav" id="mobileNav">
-            <a href="/about">About</a>
-            <a href="/features">Features</a>
-            <a href="/technology">Technology</a>
-            <a href="/applications">Applications</a>
-            <a href="/deployment">Deployment</a>
-            <a href="/team">Team</a>
-            <a href="/contact">Contact</a>
-        </div>
-    </nav>
 
+    <%- include('navbar') %>
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-text">
             <h1>Nirva-Agni</h1>
             <p>AI-Powered Fire Extinguishing with Precision and Innovation</p>
-            <a href="/about" class="btn">Learn More</a>
+            <!-- <a href="/about" class="btn">Learn More</a> -->
         </div>
         <div class="hero-image">
             <!-- Placeholder for 3D Model -->
-            <img src="/Image.jpg" alt="3D Model Placeholder">
+            <img src="Image.jpg" alt="3D Model Placeholder">
         </div>
     </section>
 

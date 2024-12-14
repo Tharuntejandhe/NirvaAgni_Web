@@ -9,18 +9,22 @@
 /* Title Section */
 .title-section {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
   animation: fadeIn 1.5s ease-in-out;
+  background: linear-gradient(to right, #141e30, #243b55);
 }
 
 .title-section h1 {
-  font-size: 4rem;
-  font-weight: 500;
-  margin-bottom: 1rem;
+  /* font-size: 2.5rem;
+  font-weight: 500; */
+  margin-bottom: 0.3rem;
+  font-size: 2.4rem;
+  font-weight: 600;
+  padding-top: 0.5rem;
 }
 
 .title-section p {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: lighter;
 }
 

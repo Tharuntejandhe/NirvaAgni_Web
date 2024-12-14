@@ -14,54 +14,50 @@
 
     <main>
         <!-- Title Section -->
-        <section class="title-section">
+        <section class="title-section py-3 text-center text-white bg-dark">
             <h1>Our Features</h1>
             <p>Explore the innovative features that set us apart.</p>
         </section>
-
+    
         <!-- Features List -->
-        <section class="features-list">
-            <div class="feature-item animate-on-scroll">
-                <div class="feature-img">
-                    <img src="Image.jpg" alt="Feature 3 Icon">
+        <section class="features-list container ">
+            <div class="row">
+                <div class="col-md-6 col-lg-4 feature-item animate-on-scroll mb-4">
+                    <div class="feature-card p-3 shadow-sm rounded" data-aos="fade-up">
+                        <img src="Image.jpg" alt="Advanced Fire Suppression Technology" class="img-fluid rounded mb-3">
+                        <h2 class="h5 fw-bold">Advanced Fire Suppression Technology</h2>
+                        <p>State-of-the-art fire extinguishing capabilities, ensuring rapid and effective response to fire incidents.</p>
+                    </div>
                 </div>
-                <div class="feature-info">
-                    <h2>Advanced Fire Suppression Technology</h2>
-                    <p>Our primary function is to deliver state-of-the-art fire extinguishing capabilities, ensuring rapid and effective response to fire incidents.</p>
+                <div class="col-md-6 col-lg-4 feature-item animate-on-scroll mb-4">
+                    <div class="feature-card p-3 shadow-sm rounded" data-aos="fade-up" data-aos-delay="100">
+                        <img src="Image.jpg" alt="Automated Alert System" class="img-fluid rounded mb-3">
+                        <h2 class="h5 fw-bold">Automated Alert System</h2>
+                        <p>Instantly dispatches email notifications to relevant authorities upon fire detection, facilitating prompt emergency response.</p>
+                    </div>
                 </div>
+                <div class="col-md-6 col-lg-4 feature-item animate-on-scroll mb-4">
+                    <div class="feature-card p-3 shadow-sm rounded" data-aos="fade-up" data-aos-delay="200">
+                        <img src="Image.jpg" alt="Continuous CCTV Surveillance" class="img-fluid rounded mb-3">
+                        <h2 class="h5 fw-bold">Continuous CCTV Surveillance</h2>
+                        <p>Provides round-the-clock monitoring to ensure comprehensive security coverage and peace of mind.</p>
+                    </div>
+                </div>
+                <!-- Add more features -->
             </div>
-            <div class="feature-item animate-on-scroll">
-                <div class="feature-img">
-                    <img src="Image.jpg" alt="Feature 3 Icon">
-                </div>
-                <div class="feature-info">
-                    <h2>Automated Alert System</h2>
-                    <p>Instantly dispatches email notifications to relevant authorities upon fire detection, facilitating prompt emergency response.</p>
-                </div>
-            </div>
-            <div class="feature-item animate-on-scroll">
-                <div class="feature-img">
-                    <img src="Image.jpg" alt="Feature 3 Icon">
-                </div>
-                <div class="feature-info">
-                    <h2>Continuous CCTV Surveillance</h2>
-                    <p>Provides round-the-clock monitoring to ensure comprehensive security coverage and peace of mind.Precision Alignment Mechanism.</p>
-                </div>
-            </div>
-
-            <div class="feature-item animate-on-scroll">
-                <div class="feature-img">
-                    <img src="Image.jpg" alt="Feature 3 Icon">
-                </div>
-                <div class="feature-info">
-                    <h2>Precision Alignment Mechanism</h2>
-                    <p>Ensures the robotic arm is accurately positioned for optimal fire extinguishing upon detection, enhancing operational efficiency.</p>
-                </div>
-            </div>
-            <!-- Add more features as needed -->
+        </section>
+    
+        <!-- Call to Action -->
+        <section class="cta text-center py-5 bg-dark">
+            <h2 class="fw-bold mb-3">Ready to Experience Cutting-Edge Fire Safety?</h2>
+            <a href="/contact" class="btn btn-primary btn-lg">Contact Us Today</a>
         </section>
     </main>
-
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => AOS.init());
+    </script>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         const observerOptions = {
@@ -80,6 +76,7 @@
         }, observerOptions);
     
         // Observe all elements with animate-on-scroll class
+        document.addEventListener('DOMContentLoaded', () => AOS.init());
         document.addEventListener('DOMContentLoaded', () => {
             const animatedElements = document.querySelectorAll('.animate-on-scroll');
             animatedElements.forEach(el => observer.observe(el));

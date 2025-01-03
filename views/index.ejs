@@ -12,28 +12,74 @@
 </head>
 <body>
     <!-- Navbar -->
-
     <%- include('navbar') %>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-text">
             <h1>Nirva-Agni</h1>
             <p>AI-Powered Fire Extinguishing with Precision and Innovation</p>
-            <!-- <a href="/about" class="btn">Learn More</a> -->
         </div>
         <div class="hero-image">
-            <!-- Placeholder for 3D Model -->
-            <img src="Image.jpg" alt="3D Model Placeholder">
+            <!-- Babylon.js Canvas for 3D rendering -->
+            <canvas id="renderCanvas" style="width: 100%; height: 500px;"></canvas>
         </div>
     </section>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Babylon.js -->
+    <script src="https://cdn.babylonjs.com/babylon.js"></script>
+
+    <!-- GLTFFileLoader.js -->
+    <script src="https://cdn.babylonjs.com/loaders/babylon.glTFFileLoader.min.js"></script>
+
     <script>
-        function toggleMenu() {
-            const mobileNav = document.getElementById('mobileNav');
-            mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex';
-        }
+        // Get the canvas element for Babylon.js
+        var canvas = document.getElementById("renderCanvas");
+
+        // Create Babylon.js engine and scene
+        var engine = new BABYLON.Engine(canvas, true);
+        var scene = new BABYLON.Scene(engine);
+
+        // Create camera and light
+        var camera = new BABYLON.ArcRotateCamera("camera1", Math.PI / 2, Math.PI / 2, 10, BABYLON.Vector3.Zero(), scene);
+        camera.attachControl(canvas, true); // This allows interactivity (rotation, zoom, etc.)
+        
+        // Optional: Set the lower and upper zoom limits
+        camera.lowerRadiusLimit = 5;  // Minimum zoom distance
+        camera.upperRadiusLimit = 20; // Maximum zoom distance
+
+        // Create a Hemispheric light
+        var light = new BABYLON.HemisphericLight("light1", BABYLON.Vector3.Up(), scene);
+
+        // Load the .glb file (adjust path to your .glb file)
+        BABYLON.SceneLoader.Append(
+            "/models/demo1/source/",  // Path to your .glb file
+            "omibooth2.glb",  // The actual file name
+            scene,
+            function (scene) {
+                // Once the model is loaded, you can adjust it if necessary
+                scene.createDefaultCameraOrLight(true, true, true); // Optional: Add a default camera and light if needed
+            },
+            function (progress) {
+                console.log("Model loading: " + (progress.loaded / progress.total * 100) + "%");
+            },
+            function (error) {
+                console.error("Error loading model:", error);
+            }
+        );
+
+        // Render the scene
+        engine.runRenderLoop(function () {
+            scene.render();
+        });
+
+        // Resize the engine when the window is resized
+        window.addEventListener("resize", function () {
+            engine.resize();
+        });
     </script>
 </body>
 </html>

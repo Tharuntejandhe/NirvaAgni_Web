@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Routes
 app.get('/', (req, res) => {
-    res.render('index');
+    res.render('landing');
 });
 
 app.get('/index', (req, res) => {

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Landing Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/@bentoui/core/dist/bento.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom right, #1a1a1a, #333333);
+            color: #ffffff;
+            overflow: hidden;
+        }
+
+        /* Fade-in animation for navbar */
+        .navbar {
+            width: 100%;
+            background: linear-gradient(to right, #1e293b, #334155); /* Dark gradient */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        /* Keyframes for fade-in */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .navbar h1 {
+            margin: 0;
+            font-size: 3rem;
+            color: #facc15; /* Yellow for contrast */
+            animation: pulse 2s ease-in-out 3; /* 3 pulses before stopping */
+        }
+
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: slideInFromTop 1.5s forwards;
+        }
+
+        /* Keyframes for slide-in animation */
+        @keyframes slideInFromTop {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            background: linear-gradient(to right, #facc15, #f59e0b);
+            background-clip: text; /* Standard background clip for compatibility */
+            -webkit-background-clip: text; /* For WebKit-based browsers */
+            -webkit-text-fill-color: transparent; /* For WebKit-based browsers */
+            margin: 0;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #d1d5db; /* Light gray */
+        }
+
+        .nav-boxes {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            width: 100%;
+        }
+
+        /* Scale-in effect for nav-boxes */
+        .nav-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 200px;
+            background: linear-gradient(to bottom right, #2c3e50, #1e3a5f);
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+            opacity: 0;
+            transform: scale(0.8);
+            animation: scaleIn 0.8s forwards;
+        }
+
+        /* Keyframes for scale-in animation */
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .nav-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-box h3 {
+            margin: 0;
+            color: #facc15; /* Yellow for text */
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .nav-boxes {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <h1>VATrix</h1>
+    </nav>
+
+    <div class="container">
+        <header class="header">
+            <h1>Welcome to VATrix</h1>
+            <p>Discover innovative solutions and explore our projects</p>
+        </header>
+
+        <div class="nav-boxes">
+            <a href="index" class="nav-box">
+                <h3>Nirva Agni</h3>
+            </a>
+            <a href="#" class="nav-box">
+                <h3>Project 2</h3>
+            </a>
+            <a href="#" class="nav-box">
+                <h3>Project 3</h3>
+            </a>
+            <a href="#" class="nav-box">
+                <h3>Project 4</h3>
+            </a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@bentoui/core/dist/bento.min.js"></script>
+</body>
+</html>
